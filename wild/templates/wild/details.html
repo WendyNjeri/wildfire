@@ -28,10 +28,54 @@
         </div>
         <div class="col-sm-9">
             <div class="panel panel-default">
-                <div class="panel-body">
+                <div class="panel-header" >
                     <div class="caption">
-                         <h1 class="text-center" style="font-family:Amaranth" > {{ events.event }} </h1>
-                         <h2><p style="font-family:Cute Font">{{events.description}}</p></h2>
+                         <h1 class="text-center" style="font-family:Amaranth;background:LIME" > {{ events.event }} </h1>
+                         <h2><p style="font-family:Cute Font; background:LIME">{{events.description}}</p></h2>
+
+
+                        <div class="panel panel-footer  panel-info"style="background:TEAL">
+                            <div class="caption">
+                                <h4>{{home.comment}}</h4>
+                                <h3>Comments</h3>
+                                {% for home in events.comment_set.all %}
+                            <h4 style="font-family:Amaranth">{{ home.comment }}<br> by {{ home.user_name }}<br> </h4>
+                            {% endfor %}
+
+                            </div>
+                            </div>
+
+
+                            <div class="panel panel-footer" style="background:SILVER">
+                                <div class="caption">
+                                <h4>{{ events.charges }}
+                                    {{ events.venue }}
+                                {{ events.time }}
+                                {{ events.date }}
+                                </h4>
+
+                            </div>
+                            </div>
+
+
+
+
+                        <div class="panel panel-footer" style="float:right">
+                              <a href="" class="btn btn-primary btn-lg ">
+                                 <i class="fas fa-comment"></i>
+                             </a>
+
+                              <a href="" class="btn btn-primary btn-lg" style="float:right">
+                                  <i class="fas fa-heart"></i>
+                              </a>
+
+
+                             <a href="" class="btn btn-danger btn-lg" style="float:right">
+                                 <i class="fas fa-trash"></i>
+                             </a>
+                        </div>
+
+
                     </div>
 
                 </div>
