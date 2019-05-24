@@ -1,38 +1,41 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
+
 <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Special Elite' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Carter One' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Cute Font' rel='stylesheet'>
 
 <div class="container">
     <div class="row">
-         {% for event in events %}
         <div class="col-sm-3">
-            <div class="panel panel-default", style="background: deepskyblue">
-                <a href="{% url 'wild:details' event.id %}">
-                    <img src=" {{ event.banner.url }}" class="img img-thumbnail" alt="" style="margin:2px">
-                    <div class="caption" style="margin:3px" >
-                        <h4 style="font-family:Special Elite"  >
-                            {{ event.event }}
+            <div class="panel panel-info">
+                <div class="panel-body">
+                     <img  src="{{ events.banner.url }}" class="img img-thumbnail img-responsive" alt="">
+                      <h4 style="font-family:Special Elite"  >
+                            {{ events.event }}
                         </h4>
                         <h4 style="font-family:Special Elite">
-                            {{ event.venue }}
+                            {{ events.venue }}
                         </h4>
                         <h4 style="font-family:Special Elite">
-                            {{ event.date}}, {{ event.time }}
+                            {{ events.date}}, {{ events.time }}
                         </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="caption">
+                         <h1 class="text-center" style="font-family:Amaranth" > {{ events.event }} </h1>
+                         <h2><p style="font-family:Cute Font">{{events.description}}</p></h2>
                     </div>
 
-                </a>
+                </div>
             </div>
-
         </div>
-         <div class="col-sm-9">
-
-        </div>
-       {% endfor %}
     </div>
-
 </div>

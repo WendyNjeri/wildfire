@@ -10,6 +10,9 @@ class Event(models.Model):
      date = models.DateField()
      time = models.TimeField(max_length=40)
      cash = models.CharField(max_length=40)
+     description = models.CharField(max_length=1000000)
+
+
 
      def __str__(self):
          return self.event
